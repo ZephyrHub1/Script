@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Unlock Script</title>
   <style>
     body {
@@ -50,6 +50,7 @@
       cursor: pointer;
       transition: 0.3s;
       color: white;
+      text-decoration: none;
     }
 
     .btn.tiktok { background: #007bff; }
@@ -82,20 +83,21 @@
   </style>
 </head>
 <body>
-
   <div class="container">
     <div class="title">🔑 Unlock Script</div>
     <div class="subtitle">Hoàn thành nhiệm vụ để mở khóa script</div>
 
-    <button class="btn tiktok">📌 Follow TikTok</button>
-    <button class="btn youtube">📺 Đăng Ký YouTube</button>
+    <!-- Nhiệm vụ -->
+    <a class="btn tiktok" href="https://www.tiktok.com/@growagardenmaster11?_t=ZS-904qIMIh91U&_r=1" target="_blank">📌 Follow TikTok</a>
+    <a class="btn youtube" href="https://youtube.com/@quanganh-cr7jp?si=WBXNyyBq6Q5Gfmvx" target="_blank">📺 Đăng Ký YouTube</a>
 
+    <!-- Progress bar -->
     <div class="progress-bar">
       <div class="progress" id="progress"></div>
     </div>
 
-    <!-- Nút unlock (ẩn ban đầu) -->
-    <button class="btn unlock" id="unlockBtn">🔓 Mở Khóa Script</button>
+    <!-- Nút unlock -->
+    <a class="btn unlock" id="unlockBtn" href="https://example.com/your-script-link" target="_blank">🔓 Mở Khóa Script</a>
   </div>
 
   <script>
@@ -119,15 +121,6 @@
         }
       });
     });
-
-    // Nút unlock hành động
-    unlockBtn.addEventListener('click', () => {
-      // Ví dụ: chuyển hướng hoặc hiện link tải script
-      window.location.href = "https://example.com/your-script-download-link";
-      // Hoặc bạn có thể hiện mã script tại đây
-      // alert("Đây là mã script của bạn: ...");
-    });
   </script>
-
 </body>
 </html>
