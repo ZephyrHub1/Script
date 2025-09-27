@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unlock Script</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #141E30, #243B55);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background-color: #1f1f2e;
+      padding: 30px 25px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .title {
+      color: #00bfff;
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      color: #ccc;
+      font-size: 15px;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: 0.3s;
+      color: white;
+    }
+
+    .btn.tiktok { background: #007bff; }
+    .btn.youtube { background: #ff5722; }
+    .btn.unlock {
+      background: #28a745;
+      display: none;
+      margin-top: 20px;
+    }
+
+    .btn:hover {
+      transform: scale(1.03);
+      opacity: 0.9;
+    }
+
+    .progress-bar {
+      height: 20px;
+      background-color: #333;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-top: 20px;
+    }
+
+    .progress {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #00c6ff, #0072ff);
+      transition: width 0.5s ease-in-out;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="title">🔑 Unlock Script</div>
+    <div class="subtitle">Hoàn thành nhiệm vụ để mở khóa script</div>
+
+    <button class="btn tiktok">📌 Follow TikTok</button>
+    <button class="btn youtube">📺 Đăng Ký YouTube</button>
+
+    <div class="progress-bar">
+      <div class="progress" id="progress"></div>
+    </div>
+
+    <!-- Nút unlock (ẩn ban đầu) -->
+    <button class="btn unlock" id="unlockBtn">🔓 Mở Khóa Script</button>
+  </div>
+
+  <script>
+    let progress = 0;
+    const progressBar = document.getElementById('progress');
+    const buttons = document.querySelectorAll('.btn:not(.unlock)');
+    const unlockBtn = document.getElementById('unlockBtn');
+
+    let completedTasks = new Set();
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        if (!completedTasks.has(button)) {
+          completedTasks.add(button);
+          progress += 50;
+          progressBar.style.width = progress + '%';
+
+          if (progress >= 100) {
+            unlockBtn.style.display = 'block';
+          }
+        }
+      });
+    });
+
+    // Nút unlock hành động
+    unlockBtn.addEventListener('click', () => {
+      // Ví dụ: chuyển hướng hoặc hiện link tải script
+      window.location.href = "https://example.com/your-script-download-link";
+      // Hoặc bạn có thể hiện mã script tại đây
+      // alert("Đây là mã script của bạn: ...");
+    });
+  </script>
+
+</body>
+</html>
